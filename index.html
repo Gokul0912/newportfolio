@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gokul K | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  
+
+</head>
+<body>
+  <!-- <section class="hero">
+    <div class="overlay">
+      <h1>Hi, I'm <span class="name">Gokul K</span></h1>
+      <div class="typewrite"></div>
+      <a href="#experience" class="enter-btn">Explore ↓</a>
+    </div>
+  </section> -->
+  <section id="home" class="hero-section">
+    <div class="hero-bg-animation"></div>
+    <div class="hero-content">
+      <div class="text-zone">
+        <h1 class="fade-in">Hi, I'm <span class="highlight">Gokul K</span></h1>
+        <p class="typed-role fade-in-delay">AR/VR Developer | Game Designer | AI Enthusiast</p>
+        <div class="cta-buttons fade-in-delay-2">
+          <a href="#projects" class="btn">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+      </div>
+      <div class="image-zone">
+  <img src="assets/images/gokul1.jpg" alt="Gokul K - Portrait" class="img-main" />
+  <img src="assets/images/gokul2.jpg" alt="Gokul K - Action" class="img-secondary" />
+</div>
+
+    </div>
+  </section>
+  
+  
+  <header id="header">
+    <nav class="navbar">
+      <div class="nav-logo">Gokul K</div>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#freelance" class="nav-link">Freelance</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+  </header>
+  
+  <section id="experience" class="experience-section">
+    <h2 class="section-title">Experience</h2>
+    <div class="experience-container">
+      
+      <!-- Sierra -->
+      <div class="experience-card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front glow">
+            <h3>Sierra Digital</h3>
+            <p>Technical Trainee<br><span class="date">Jun 2024 – Dec 2024</span></p>
+            <span class="hint">Click to view projects</span>
+          </div>
+          <div class="card-back glow">
+            <h4>Key Projects</h4>
+            <ul>
+              <li><strong>GenAI + SAP HANA DB:</strong> Extracting insights from structured and unstructured data using Generative AI integrated with SAP HANA.</li>
+              <li><strong>SAC Automation:</strong> Automated login, data entry, visualization, and predictive planning in SAP Analytics Cloud using Selenium.</li>
+              <li><strong>Planning Dashboards:</strong> Designed an advanced planning dashboard with intuitive data visuals.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Nexus -->
+      <div class="experience-card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front glow">
+            <h3>Nexus Global Solutions</h3>
+            <p>UI/UX Intern<br><span class="date">Dec 2023 – Jan 2024</span></p>
+            <span class="hint">Click to view project</span>
+          </div>
+          <div class="card-back glow">
+            <h4>Design Work</h4>
+            <ul>
+              <li><strong>Modern UI Design:</strong> Created clean, user-centric application designs based on modern design principles.</li>
+              <li><strong>Wireframing & Prototyping:</strong> Delivered interactive prototypes improving design-to-dev handoff.</li>
+              <li><strong>Improved UX:</strong> Resolved UI/UX gaps to enhance overall application usability.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+      
+    
+  
+  <!-- <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="card">🖐️ AR Gesture Interaction</div>
+    <div class="card">⛏️ VR Miner Safety Simulation</div>
+    <div class="card">🏠 AR/VR Home Visualization</div>
+    <div class="card">🎨 AR Paint Estimation</div>
+    <div class="card">📇 AR Business Card</div>
+  </section> -->
+
+  <section id="freelance" class="freelance-section">
+    <h2 class="section-title">Freelance Experience</h2>
+  
+    <div class="timeline">
+      <div class="timeline-dot"></div>
+      <div class="timeline-line"></div>
+      <p class="timeline-text">Started Freelancing <span>Feb 2023</span></p>
+      <p class="timeline-text">Worked with foreign clients <span>Aug 2023</span></p>
+      <p class="timeline-text">Game Dev + AR/VR Projects <span>Ongoing</span></p>
+    </div>
+  
+    <div class="freelance-cards">
+      <div class="freelance-card">
+        <h3>Global Freelance Projects</h3>
+        <p>Delivered high-quality Game Development & AR/VR solutions to clients from Australia , UAE .</p>
+      </div>
+      <div class="freelance-card">
+        <h3>Medium-Scale Companies</h3>
+        <p>Built applications for medium scaled Companies</p>
+      </div>
+      <div class="freelance-card">
+        <h3>Expertise</h3>
+        <p>Game Developer | AR/VR Developer | 3D Experiences | AI/ML Engineer</p>
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <!-- <section id="enquiry" class="section">
+    <h2>Freelance Enquiry</h2>
+    <form id="enquiryForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Requirement" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section> -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card" data-video="gesture.mp4">
+        <h3>🖐️ AR Gesture Interaction</h3>
+        <p>Control 3D objects using real-time hand gestures.</p>
+      </div>
+  
+      <div class="project-card" data-video="miner.mp4">
+        <h3>⛏️ VR Miner Safety Simulation</h3>
+        <p>Hazard training and PPE selection in VR.</p>
+      </div>
+  
+      <div class="project-card" data-video="home.mp4">
+        <h3>🏠 AR/VR Home Visualization</h3>
+        <p>Scan floorplans & visualize home in real-time AR/VR.</p>
+      </div>
+  
+      <div class="project-card" data-video="paint.mp4">
+        <h3>🎨 AR Paint Estimation</h3>
+        <p>Scan walls & calculate paint cost with AR.</p>
+      </div>
+  
+      <div class="project-card" data-video="card.mp4">
+        <h3>📇 AR Business Card</h3>
+        <p>Augmented reality card with contact & media overlays.</p>
+      </div>
+  
+      <div class="project-card" data-video="museum.mp4">
+        <h3>🏛️ AR Museum Experience</h3>
+        <p>Explore 3D artifacts with AR interactions.</p>
+      </div>
+    </div>
+  
+    <!-- Popup Player -->
+    <div id="videoPopup" class="popup hidden">
+      <div class="popup-inner">
+        <span class="close-btn">✖</span>
+        <video id="popupVideo" controls></video>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="about-section">
+    <h2 class="section-title">About Me</h2>
+    <p class="about-text">
+      I’m a passionate <strong>M.Tech Computer Science</strong> student with a deep enthusiasm for emerging technologies and hands-on development. With core expertise in <strong>AR/VR, Game Development, SAP, AI/ML</strong>, and <strong>Generative AI</strong>, I strive to design and build innovative, immersive experiences that solve real-world challenges.
+      <br><br>
+      I believe in learning by doing. I’ve developed simulation-based training environments, AR visualization tools, and business intelligence dashboards integrated with GenAI — all rooted in real needs and functional outcomes.
+      <br><br>
+      With a flair for creativity and a hunger for technology, I enjoy merging imagination with engineering — whether it's designing a futuristic AR business card or building intelligent SAP-integrated platforms. I'm looking forward to collaborating on global projects that demand innovation, dedication, and a touch of boldness.
+    </p>
+  </section>
+  <section id="contact" class="contact-section">
+    <h2 class="section-title">Contact Me</h2>
+    <p class="contact-info">📧 <a href="mailto:gokukrishnan755@gmail.com">gokukrishnan755@gmail.com</a></p>
+    <p class="contact-info">🔗 <a href="https://www.linkedin.com/in/gokul-k-a1b74024b/" target="_blank">LinkedIn Profile</a></p>
+  </section>
+    
+  
+  <footer>
+    <p>© 2025 Gokul K | AR/VR Developer | Game Developer | SAP Enthusiast | AI/ML Engineer</p>
+  </footer>
+  <script>
+    function flipCard(cardElement) {
+      cardElement.classList.toggle("flipped");
+    }
+    </script>
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+      </script>
+      
+  <script src="js/script.js"></script>
+</body>
+</html>
