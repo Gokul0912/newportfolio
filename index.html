@@ -7,17 +7,15 @@
   <link rel="stylesheet" href="css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
   
 
 </head>
 <body>
-  <!-- <section class="hero">
-    <div class="overlay">
-      <h1>Hi, I'm <span class="name">Gokul K</span></h1>
-      <div class="typewrite"></div>
-      <a href="#experience" class="enter-btn">Explore ↓</a>
-    </div>
-  </section> -->
+
+  <div id="tsparticles"></div>
+
   <section id="home" class="hero-section">
     <div class="hero-bg-animation"></div>
     <div class="hero-content">
@@ -58,7 +56,7 @@
     <div class="experience-container">
       
       <!-- Sierra -->
-      <div class="experience-card" onclick="flipCard(this)">
+      <div class="experience-card glass hud-box holo-flicker" onclick="flipCard(this)">
         <div class="card-inner">
           <div class="card-front glow">
             <h3>Sierra Digital</h3>
@@ -77,8 +75,8 @@
       </div>
   
       <!-- Nexus -->
-      <div class="experience-card" onclick="flipCard(this)">
-        <div class="card-inner">
+      <div class="experience-card glass hud-box holo-flicker" onclick="flipCard(this) ">
+        <div class="card-inner ">
           <div class="card-front glow">
             <h3>Nexus Global Solutions</h3>
             <p>UI/UX Intern<br><span class="date">Dec 2023 – Jan 2024</span></p>
@@ -122,15 +120,15 @@
     </div>
   
     <div class="freelance-cards">
-      <div class="freelance-card">
+      <div class="freelance-card glass hud-box holo-flicker">
         <h3>Global Freelance Projects</h3>
         <p>Delivered high-quality Game Development & AR/VR solutions to clients from Australia , UAE .</p>
       </div>
-      <div class="freelance-card">
+      <div class="freelance-card glass hud-box holo-flicker">
         <h3>Medium-Scale Companies</h3>
         <p>Built applications for medium scaled Companies</p>
       </div>
-      <div class="freelance-card">
+      <div class="freelance-card glass hud-box holo-flicker">
         <h3>Expertise</h3>
         <p>Game Developer | AR/VR Developer | 3D Experiences | AI/ML Engineer</p>
       </div>
@@ -150,47 +148,52 @@
   </section> -->
   <section id="projects" class="section">
     <h2>Projects</h2>
+    
     <div class="projects-grid">
-      <div class="project-card" data-video="gesture.mp4">
+      <div class="project-card glass hud-box holo-flicker" data-video="gesture.mp4">
         <h3>🖐️ AR Gesture Interaction</h3>
         <p>Control 3D objects using real-time hand gestures.</p>
       </div>
   
-      <div class="project-card" data-video="miner.mp4">
+      <div class="project-card glass hud-box holo-flicker" data-video="miner.mp4">
         <h3>⛏️ VR Miner Safety Simulation</h3>
         <p>Hazard training and PPE selection in VR.</p>
       </div>
   
-      <div class="project-card" data-video="home.mp4">
+      <div class="project-card glass hud-box holo-flicker" data-video="home.mp4">
         <h3>🏠 AR/VR Home Visualization</h3>
         <p>Scan floorplans & visualize home in real-time AR/VR.</p>
       </div>
   
-      <div class="project-card" data-video="paint.mp4">
+      <div class="project-card glass hud-box holo-flicker" data-video="paint.mp4">
         <h3>🎨 AR Paint Estimation</h3>
         <p>Scan walls & calculate paint cost with AR.</p>
       </div>
   
-      <div class="project-card" data-video="card.mp4">
+      <div class="project-card glass hud-box holo-flicker" data-video="card.mp4">
         <h3>📇 AR Business Card</h3>
         <p>Augmented reality card with contact & media overlays.</p>
       </div>
   
-      <div class="project-card" data-video="museum.mp4">
+      <div class="project-card glass hud-box holo-flicker" data-video="museum.mp4">
         <h3>🏛️ AR Museum Experience</h3>
         <p>Explore 3D artifacts with AR interactions.</p>
       </div>
     </div>
   
-    <!-- Popup Player -->
-    <div id="videoPopup" class="popup hidden">
-      <div class="popup-inner">
-        <span class="close-btn">✖</span>
-        <video id="popupVideo" controls></video>
-      </div>
-    </div>
+    <!-- Project Cards (already in place) -->
+
+
+<!-- Video Popup -->
+<div id="videoPopup" class="popup hidden">
+  <div class="popup-inner">
+    <span class="close-btn">✖</span>
+    <video id="popupVideo" controls muted></video>
+  </div>
+</div>
+
   </section>
-  <section id="about" class="about-section">
+  <section id="about" class="about-section animate-on-scroll">
     <h2 class="section-title">About Me</h2>
     <p class="about-text">
       I’m a passionate <strong>M.Tech Computer Science</strong> student with a deep enthusiasm for emerging technologies and hands-on development. With core expertise in <strong>AR/VR, Game Development, SAP, AI/ML</strong>, and <strong>Generative AI</strong>, I strive to design and build innovative, immersive experiences that solve real-world challenges.
@@ -206,7 +209,11 @@
     <p class="contact-info">🔗 <a href="https://www.linkedin.com/in/gokul-k-a1b74024b/" target="_blank">LinkedIn Profile</a></p>
   </section>
     
-  
+  <button id="backToTop" title="Go to top">↑</button>
+  <div class="custom-cursor"></div>
+  <canvas id="neuralBackground"></canvas>
+
+
   <footer>
     <p>© 2025 Gokul K | AR/VR Developer | Game Developer | SAP Enthusiast | AI/ML Engineer</p>
   </footer>
@@ -228,5 +235,7 @@
       </script>
       
   <script src="js/script.js"></script>
+  
+
 </body>
 </html>
