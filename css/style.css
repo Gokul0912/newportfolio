@@ -1467,3 +1467,223 @@ h1, h2, h3, .section-title, .typed-role, .hud-text {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 255, 255, 0.3);
 }
+/* Handles both portrait and landscape videos gracefully */
+.popup-inner video {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: #000;
+}
+
+/* Optional: add special styles for portrait videos */
+.portrait-video {
+  max-height: 80vh;
+  width: auto;
+}
+.flip-container {
+  perspective: 1000px;
+  cursor: pointer;
+  height: 260px;
+  position: relative;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.flip-container.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 1rem;
+  border-radius: 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.card-front {
+  background: rgba(0, 0, 0, 0.4);
+  color: #00fff7;
+}
+
+.card-back {
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  transform: rotateY(180deg);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.card-back button.watch-btn {
+  margin-top: 1rem;
+  padding: 8px 16px;
+  background: #00fff7;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* Toggle Button Styling */
+.project-toggle {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.project-toggle .btn {
+  margin: 0 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  background: rgba(0, 255, 247, 0.1);
+  color: #00fff7;
+  border: 1px solid #00fff7;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.project-toggle .btn:hover,
+.project-toggle .btn:focus {
+  background: rgba(0, 255, 247, 0.3);
+}
+
+/* Hide non-selected project section */
+.projects-grid.hidden {
+  display: none;
+}
+
+/* Pulsating effect for ongoing projects */
+.pulsating {
+  animation: pulse-glow 1.5s infinite;
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 8px rgba(0,255,247,0.2); }
+  50% { box-shadow: 0 0 18px rgba(0,255,247,0.8); }
+  100% { box-shadow: 0 0 8px rgba(0,255,247,0.2); }
+}
+/* Optional animated glow for ongoing projects */
+.pulsating {
+  animation: pulse-glow 1.5s infinite;
+}
+.project-mystery {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  color: #00fff7;
+  border: 1px dashed #00fff7;
+  margin: 2rem auto 0;
+  max-width: 600px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  line-height: 1.6;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 12px rgba(0, 255, 247, 0.2);
+  animation: pulse-glow 2s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0%   { box-shadow: 0 0 10px rgba(0,255,247,0.2); }
+  100% { box-shadow: 0 0 20px rgba(0,255,247,0.7); }
+}
+.project-toggle {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.project-toggle .btn {
+  margin: 0 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  background: rgba(0, 255, 247, 0.1);
+  color: #00fff7;
+  border: 1px solid #00fff7;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.project-toggle .btn:hover,
+.project-toggle .btn:focus {
+  background: rgba(0, 255, 247, 0.3);
+}
+
+/* Hidden class to toggle project sections */
+.projects-grid.hidden {
+  display: none;
+}
+
+/* Mystery teaser box style */
+.project-mystery {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  color: #00fff7;
+  border: 1px dashed #00fff7;
+  margin: 2rem auto 0;
+  max-width: 600px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  line-height: 1.6;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 12px rgba(0, 255, 247, 0.2);
+  animation: pulse-glow 2s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0%   { box-shadow: 0 0 10px rgba(0,255,247,0.2); }
+  100% { box-shadow: 0 0 20px rgba(0,255,247,0.7); }
+}
+/* Flip container setup */
+.flip-container {
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-container .card-inner {
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flip-container.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and back face styles */
+.card-front, .card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.card-front {
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
