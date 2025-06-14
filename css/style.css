@@ -1736,3 +1736,21 @@ h1, h2, h3, .section-title, .typed-role, .hud-text {
     margin-bottom: 1rem;
   }
 }
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.canvas,
+#neuralBackground,
+#tsparticles,
+.popup,
+.popup-inner {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  display: block;
+}
