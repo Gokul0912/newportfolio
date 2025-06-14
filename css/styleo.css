@@ -1687,83 +1687,70 @@ h1, h2, h3, .section-title, .typed-role, .hud-text {
 .card-back {
   transform: rotateY(180deg);
 }
-
-/* === FIXES FOR MOBILE OVERFLOW & POPUP ISSUES === */
-html, body {
-  overflow-x: hidden;
+.nav-links {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+.nav-links.open {
+  opacity: 1;
+}
+.hero-section {
+  flex-direction: column;
+  text-align: center;
+}
+.hero-content {
+  flex-direction: column;
+  gap: 2rem;
+}
+.text-zone, .image-zone {
   width: 100%;
 }
-
-.navbar {
-  left: 0;
-  right: 0;
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
 @media (max-width: 768px) {
-  .nav-links {
-    left: 0;
-    right: 0;
+  .projects-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  .project-card {
     width: 100%;
-    max-width: 100vw;
-    box-sizing: border-box;
   }
-
-  .hamburger {
-    margin-right: 1rem;
-  }
-
-  .popup-inner {
-    max-width: 95vw;
-    width: auto;
-    padding: 1rem;
-    box-sizing: border-box;
-  }
-
-  .popup video {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .project-card,
+}
+@media (max-width: 768px) {
   .experience-card,
   .freelance-card {
     width: 90%;
-    margin: 1rem auto;
-  }
-
-  .hero-section,
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .image-zone img {
-    width: 180px;
-    height: 180px;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .btn {
-    width: 80%;
+    margin: 0 auto;
   }
 }
-
-body > * {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
 @media (pointer: coarse) {
   .custom-cursor {
     display: none !important;
   }
+}
+@media (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+}
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.canvas,
+#neuralBackground,
+#tsparticles,
+.popup,
+.popup-inner {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  display: block;
 }
