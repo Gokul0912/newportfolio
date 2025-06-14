@@ -73,19 +73,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Hamburger menu
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  document.querySelectorAll('.nav-link').forEach(link => {
+ const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');      // animate the bars
+  navLinks.classList.toggle('open');       // show/hide menu
+});
+
+document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
+    hamburger.classList.remove('open');
   });
 });
 
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-  }
 
   // Highlight nav on scroll
   const sections = document.querySelectorAll("section");
@@ -123,14 +125,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Custom cursor
   const cursor = document.querySelector('.custom-cursor');
+if (cursor) {
   document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
+    const x = Math.min(e.clientX, window.innerWidth - 10);
+    const y = Math.min(e.clientY, window.innerHeight - 10);
+    cursor.style.left = `${x}px`;
+    cursor.style.top = `${y}px`;
   });
+
   document.addEventListener('click', () => {
     cursor.classList.add('clicked');
     setTimeout(() => cursor.classList.remove('clicked'), 150);
   });
+}
+
+  document.addEventListener('mousemove', e => {
+  const x = Math.min(e.clientX, window.innerWidth - 10);
+  const y = Math.min(e.clientY, window.innerHeight - 10);
+  cursor.style.left = `${x}px`;
+  cursor.style.top = `${y}px`;
+});
+
 
   // tsparticles background
   tsParticles.load("tsparticles", {
