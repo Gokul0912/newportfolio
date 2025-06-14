@@ -1687,3 +1687,52 @@ h1, h2, h3, .section-title, .typed-role, .hud-text {
 .card-back {
   transform: rotateY(180deg);
 }
+.nav-links {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+.nav-links.open {
+  opacity: 1;
+}
+.hero-section {
+  flex-direction: column;
+  text-align: center;
+}
+.hero-content {
+  flex-direction: column;
+  gap: 2rem;
+}
+.text-zone, .image-zone {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  .project-card {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .experience-card,
+  .freelance-card {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,65 @@
+/* === MOBILE RESPONSIVE IMPROVEMENTS === */
+@media (max-width: 768px) {
+  .navbar, .hero-section, .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: #111;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+  .nav-links.open {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .project-card,
+  .experience-card,
+  .freelance-card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .btn {
+    width: 80%;
+  }
+
+  .image-zone img {
+    width: 180px !important;
+    height: 180px !important;
+  }
+}
+
+/* Disable custom cursor on touch screens */
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}

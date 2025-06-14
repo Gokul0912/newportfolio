@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const typed = new Typed(".typed-role", {
     strings: [
       "AR/VR Developer",
-      "Game Designer",
+      "Game Developer",
       "SAP Innovator",
       "Generative AI Explorer",
       "Creative Technologist"
@@ -75,6 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Hamburger menu
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.querySelector('.nav-links');
+  document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+  });
+});
+
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('open');
@@ -285,3 +291,11 @@ document.querySelectorAll('.project-card, .experience-card').forEach(card => {
     };
   });
 });
+let lastHeight = window.innerHeight;
+setInterval(() => {
+  if (window.innerHeight !== lastHeight) {
+    resizeCanvas();
+    createPoints();
+    lastHeight = window.innerHeight;
+  }
+}, 500);

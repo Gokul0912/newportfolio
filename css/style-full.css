@@ -1,0 +1,283 @@
+/* ====== BASE STYLES ====== */
+:root {
+  --primary-color: hsl(180, 100%, 60%);
+  --secondary-color: hsl(0, 100%, 60%);
+  --glow-color-primary: rgba(0, 255, 255, 0.7);
+  --glow-color-secondary: rgba(255, 0, 255, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0a;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  padding: 4rem 2rem;
+}
+
+h1, h2, h3 {
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  transition: all 0.3s ease;
+}
+
+.nav-link {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+}
+
+/* ====== HAMBURGER ====== */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* ====== HERO ====== */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 100px;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.image-zone {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-zone img {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 0 20px var(--glow-color-primary);
+}
+
+.highlight {
+  color: var(--primary-color);
+}
+
+/* ====== PROJECTS ====== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.project-card, .experience-card, .freelance-card {
+  padding: 1.5rem;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s;
+  position: relative;
+  cursor: pointer;
+}
+
+.project-card:hover, .experience-card:hover {
+  transform: scale(1.03);
+}
+
+.card-inner {
+  perspective: 1000px;
+  transition: transform 0.6s;
+}
+
+.project-card.flipped .card-inner,
+.experience-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* ====== BUTTONS ====== */
+.btn {
+  background: var(--primary-color);
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+/* ====== BACK TO TOP ====== */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--primary-color);
+  color: black;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+}
+#backToTop.show {
+  display: block;
+}
+
+/* ====== CUSTOM CURSOR ====== */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.1s ease;
+}
+.custom-cursor.clicked {
+  transform: scale(1.5);
+}
+
+/* ====== FOOTER ====== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  background: #000;
+}
+
+/* ====== MOBILE RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .navbar, .hero-section, .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: #111;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+  .nav-links.open {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .project-card,
+  .experience-card,
+  .freelance-card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .btn {
+    width: 80%;
+  }
+
+  .image-zone img {
+    width: 180px !important;
+    height: 180px !important;
+  }
+}
+
+/* Disable custom cursor on touch screens */
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
