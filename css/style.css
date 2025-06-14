@@ -1767,3 +1767,34 @@ body > * {
     display: none !important;
   }
 }
+.navbar, .nav-links {
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.nav-links li {
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  .experience-section,
+  .freelance-section,
+  .about-section {
+    padding: 2rem 1rem;
+  }
+}
+section, .section, .section-title {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
